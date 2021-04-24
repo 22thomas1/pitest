@@ -8,3 +8,4 @@ bot = Create2(port)
 # Start the Create 2
 bot.start()
 bot.full()
+bot.close()
