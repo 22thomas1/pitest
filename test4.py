@@ -12,7 +12,7 @@ import time
 
 
 if __name__ == "__main__":
-    port = '/dev/ttyS0'
+    port = '/dev/ttyAMA0'
     # port = "/dev/serial/by-id/usb-FTDI_FT231X_USB_UART_DA01NX3Z-if00-port0"
 
     bot = pycreate2.Create2(port=port)
