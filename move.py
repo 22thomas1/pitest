@@ -20,6 +20,16 @@ def drive(bot,dist,speed):
   time.sleep(travelTime)
   bot.drive_stop()
 
+def turn(bot,angle,speed):
+  if angle==0:
+    return None
+  wheelTrack = 233  # distance between two wheels (mm)
+  travelDistance = (angle/360)*(math.pi*wheelTrack)  # (percentage of circle)*(circumference)
+  travelTime = travelDistance/speed
+  bot.drive_direct(-speed,speed)
+  time.sleep(travelTime)
+  bot.drive_stop()
+  
   
 # initializations
 RLOR = initBot("/dev/ttyUSB0")
@@ -38,12 +48,3 @@ for line in f:
 # cleanup
 f.close()
 RLOR.close()
-def turn(bot,angle,speed):
-  if angle==0:
-    return None
-  wheelTrack = 233  # distance between two wheels (mm)
-  travelDistance = (angle/360)*(math.pi*wheelTrack)  # (percentage of circle)*(circumference)
-  travelTime = travelDistance/speed
-  bot.drive_direct(-speed,speed)
-  time.sleep(travelTime)
-  bot.drive_stop()
