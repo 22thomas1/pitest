@@ -13,6 +13,7 @@ bot = Create2(port)
 bot.start()
 bot.full()
 
+print(bot.sensor_data())
 sen(bot,19)
 bot.drive_direct(100,100)
 time.sleep(1)
