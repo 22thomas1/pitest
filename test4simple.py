@@ -17,7 +17,7 @@ bot.full()
 #print(bot.get_sensors())
 
 ang = sen(bot)
-bot.drive_direct(-100,100)
+bot.drive_direct(-500,500)
 while ang<90:
   ang+=sen(bot)
   print(ang)
