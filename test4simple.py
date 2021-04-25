@@ -19,7 +19,7 @@ bot.full()
 dist = sen(bot)
 bot.drive_direct(100,100)
 while dist<200:
-  dist=sen(bot)
+  dist+=sen(bot)
   print(dist)
 bot.drive_stop()
 
