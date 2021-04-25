@@ -40,8 +40,8 @@ f=open("input.txt","r")
 f.readline() #skip instruction line
 
 # global variables
-driveSpeed = 200
-turnSpeed = 200
+driveSpeed = 500
+turnSpeed = 500
 
 for line in f:
   angle,distance = list(map(float,line.split(" ")))
