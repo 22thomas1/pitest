@@ -1,2 +1,6 @@
 Format: Angle Distance
 0 1
+90 1
+90 1
+90 1
+90 0
