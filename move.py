@@ -9,15 +9,27 @@ def initBot(port):
   bot.full()
   return bot
 
+def senDistance(bot):
+  data = bot.get_sensors()
+  return int(f"{data.distance:4}")
+
+def senAngle(bot):
+  data = bot.get_sensors()
+  return int(f"{data.angle:4}")
+
 def drive(bot,dist,speed):
   if dist==0:
     return None
-  travelTime = dist*1000/speed
   if dist<0:  # for driving in reverse
     dist = abs(dist)
     speed = -speed
+  
+  print("Starting Driving "+dist)
+  distanceTravelled=senDistance(bot)
   bot.drive_direct(speed,speed)
-  time.sleep(travelTime)
+  while distanceTravelled<dist*1000:
+    distanceTravelled+=senDistance(bot)
+    print("Distance Travelled = "+distanceTravelled)
   bot.drive_stop()
 
 def turn(bot,angle,speed):
@@ -40,8 +52,8 @@ f=open("input.txt","r")
 f.readline() #skip instruction line
 
 # global variables
-driveSpeed = 500
-turnSpeed = 500
+driveSpeed = 100
+turnSpeed = 100
 
 for line in f:
   angle,distance = list(map(float,line.split(" ")))
