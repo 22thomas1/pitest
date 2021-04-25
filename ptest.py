@@ -1,10 +1,8 @@
 # Python test file
 f=open("input.txt","r")
 
-while True:
+for line in f:
   num=map(int,f.readline().split(" "))
-  if num=="":
-    break
   for x in num:
       print(x)
 
