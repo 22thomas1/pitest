@@ -11,11 +11,11 @@ def initBot(port):
 
 def senDistance(bot):
   data = bot.get_sensors()
-  return int(f"{data.distance:4}")
+  return abs(int(f"{data.distance:4}"))
 
 def senAngle(bot):
   data = bot.get_sensors()
-  return int(f"{data.angle:4}")
+  return abs(int(f"{data.angle:4}"))
 
 def drive(bot,dist,speed):
   if dist==0:
@@ -23,28 +23,27 @@ def drive(bot,dist,speed):
   if dist<0:  # for driving in reverse
     dist = abs(dist)
     speed = -speed
-  
   print("Starting Driving "+str(dist))
   distanceTravelled=senDistance(bot)
   bot.drive_direct(speed,speed)
   while distanceTravelled<dist*1000:
     distanceTravelled+=senDistance(bot)
-    print("Distance Travelled = "+str(distanceTravelled))
   bot.drive_stop()
+  print("Distance Travelled = "+str(distanceTravelled))
 
 def turn(bot,angle,speed):
   if angle==0:
     return None
-  wheelTrack = 230  # distance between two wheels (mm)
-  travelDistance = abs((angle/360)*(math.pi*wheelTrack))  # (percentage of circle)*(circumference)
-  travelTime = travelDistance/speed
   if angle<0:
     angle = abs(angle)
     speed = -speed
+  print("Starting Turning "+str(angle))
+  angleTravelled=senAngle(bot)
   bot.drive_direct(-speed,speed)
-  time.sleep(travelTime)
+  while angleTravelled<angle:
+    angleTravelled+=senAngle(bot)
   bot.drive_stop()
-  
+  print("Angle Travelled = "+str(angleTravelled))
   
 # initializations
 RLOR = initBot("/dev/ttyUSB0")
@@ -52,8 +51,8 @@ f=open("input.txt","r")
 f.readline() #skip instruction line
 
 # global variables
-driveSpeed = 100
-turnSpeed = 100
+driveSpeed = 500
+turnSpeed = 500
 
 for line in f:
   angle,distance = list(map(float,line.split(" ")))
