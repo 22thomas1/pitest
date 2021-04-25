@@ -9,8 +9,8 @@ bot = Create2(port)
 bot.start()
 bot.full()
 
-bot.drive_direct(100,100)
-time.sleep(1)
+bot.drive_direct(10,10)
+time.sleep(5)
 bot.drive_stop()
 
 bot.close()
