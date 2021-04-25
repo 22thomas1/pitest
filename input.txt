@@ -1,2 +1,2 @@
 Format: Angle Distance
-0 0.2
+0 1
