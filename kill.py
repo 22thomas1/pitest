@@ -5,7 +5,7 @@ import time
 RLOR= Create2("/dev/ttyUSB0")
 RLOR.start()
 time.sleep(1)
-RLOR.full()
+RLOR.safe()
 time.sleep(1)
 RLOR.drive_stop()
 time.sleep(1)
