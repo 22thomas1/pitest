@@ -16,12 +16,9 @@ bot.full()
 
 #print(bot.get_sensors())
 
-angle=90
-travelDistance = abs((angle/360)*(math.pi*233))
-
 ang = sen(bot)
 bot.drive_direct(-100,100)
-while ang<travelDistance:
+while ang<90:
   ang+=sen(bot)
   print(ang)
 bot.drive_stop()
