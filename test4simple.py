@@ -11,7 +11,8 @@ bot.full()
 
 bot.drive_direct(100,100)
 time.sleep(1)
-print(bot.get_sensors())
+for x in bot.get_sensors()
+  print(x)
 time.sleep(1)
 bot.drive_stop()
 
