@@ -1,13 +1,11 @@
 # Python test file
 f=open("input.txt","r")
-for x in range(4):
-  num=f.readline().split(" ")
-  num=map(int,num)
+
+while true:
+  num=map(int,f.readline().split(" "))
+  if num=="":
+    break
   for x in num:
-    print(x)
-  print("\n")
+      print(x)
 
-
-  
-  
 f.close()
