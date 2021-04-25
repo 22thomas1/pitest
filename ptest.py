@@ -2,8 +2,9 @@
 f=open("input.txt","r")
 
 for line in f:
-  num=map(int,f.readline().split(" "))
-  for x in num:
-      print(x)
+  print(line)
+  #num=map(int,f.readline().split(" "))
+  #for x in num:
+  #    print(x)
 
 f.close()
