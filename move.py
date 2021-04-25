@@ -21,5 +21,5 @@ RLOR.drive_direct(-500,500)
 time.sleep(0.5)
 RLOR.drive_direct(500,500)
 time.sleep(0.5)
-
+RLOR.drive_stop()
 RLOR.close()
