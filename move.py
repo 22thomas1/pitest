@@ -44,7 +44,7 @@ driveSpeed = 200
 turnSpeed = 200
 
 for line in f:
-  angle,distance = list(map(int,line.split(" ")))
+  angle,distance = list(map(float,line.split(" ")))
   turn(RLOR,angle,turnSpeed)
   drive(RLOR,distance,driveSpeed)
 
