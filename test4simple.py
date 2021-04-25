@@ -3,7 +3,7 @@ import time
 
 def sen(bot,id):
   data = bot.get_sensors()
-  print(data[id])
+  print(data[id-7])
 
 # Create a Create2.
 port = "/dev/ttyUSB0"  # where is your serial port?
