@@ -24,12 +24,12 @@ def drive(bot,dist,speed):
     dist = abs(dist)
     speed = -speed
   
-  print("Starting Driving "+dist)
+  print("Starting Driving "+str(dist))
   distanceTravelled=senDistance(bot)
   bot.drive_direct(speed,speed)
   while distanceTravelled<dist*1000:
     distanceTravelled+=senDistance(bot)
-    print("Distance Travelled = "+distanceTravelled)
+    print("Distance Travelled = "+str(distanceTravelled))
   bot.drive_stop()
 
 def turn(bot,angle,speed):
