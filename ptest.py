@@ -5,6 +5,6 @@ f.readline() #skip instruction line
 for line in f:
   num=list(map(int,line.split(" ")))
   for x in num:
-    print x
+    print(x)
 
 f.close()
