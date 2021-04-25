@@ -1,7 +1,7 @@
 # Python test file
 f=open("input.txt","r")
 
-while true:
+while True:
   num=map(int,f.readline().split(" "))
   if num=="":
     break
