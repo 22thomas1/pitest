@@ -1,9 +1,11 @@
 # Python test file
 f=open("input.txt","r")
-num=int(f.readline().split(" "))
-for x in num:
-  print(x)
+num=f.readline().split(" ")
+num=map(int,num)
+map(print,num)
+#for x in num:
+#  print(x)
 
   
   
-  f.close()
+f.close()
