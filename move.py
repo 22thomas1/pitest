@@ -24,8 +24,11 @@ def turn(bot,angle,speed):
   if angle==0:
     return None
   wheelTrack = 233  # distance between two wheels (mm)
-  travelDistance = (angle/360)*(math.pi*wheelTrack)  # (percentage of circle)*(circumference)
+  travelDistance = abs((angle/360)*(math.pi*wheelTrack))  # (percentage of circle)*(circumference)
   travelTime = travelDistance/speed
+  if angle<0:
+    angle = abs(angle)
+    speed = -speed
   bot.drive_direct(-speed,speed)
   time.sleep(travelTime)
   bot.drive_stop()
