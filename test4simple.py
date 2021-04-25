@@ -4,7 +4,7 @@ import math
 
 def sen(bot):
   data = bot.get_sensors()
-  return int(f"{data.angle:4}")
+  return abs(int(f"{data.angle:4}"))
 
 # Create a Create2.
 port = "/dev/ttyUSB0"  # where is your serial port?
